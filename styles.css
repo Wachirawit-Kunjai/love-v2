@@ -1,0 +1,1155 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    background: #030303;
+    color: white;
+
+    font-family:
+        Arial,
+        "Tahoma",
+        sans-serif;
+
+    overflow: hidden;
+
+    /* ป้องกันการเลือกข้อความเวลาจิ้มเล่นบนมือถือ */
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        radial-gradient(white 1px,
+            transparent 1px);
+
+    background-size:
+        clamp(35px, 4vw, 55px) clamp(35px, 4vw, 55px);
+
+    opacity: 0.16;
+
+    animation:
+        starsMove 20s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 50px;
+    }
+
+}
+
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.page {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    /*
+       dvh ช่วยเรื่อง Safari / iPhone / iPad
+       ที่มีแถบ Browser เปลี่ยนขนาด
+    */
+    height: 100dvh;
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    /*
+       padding แบบ responsive
+    */
+    padding:
+        clamp(20px, 4vw, 50px);
+
+    overflow: hidden;
+
+
+    z-index: 2;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==================================================
+   HEART
+================================================== */
+
+.heart-wrapper {
+
+    /*
+       มือถือเล็ก
+       → 250px
+
+       iPad
+       → ~330px
+
+       คอม
+       → ~400px
+    */
+
+    width:
+        clamp(240px,
+            35vw,
+            400px);
+
+    height:
+        clamp(210px,
+            30vw,
+            340px);
+
+    flex-shrink: 0;
+
+    animation:
+        heartbeat 1.2s infinite;
+}
+
+
+#heartCanvas {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+}
+
+
+/* ==================================================
+   HEARTBEAT
+================================================== */
+
+@keyframes heartbeat {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    8% {
+        transform:
+            scale(1.12);
+    }
+
+    16% {
+        transform:
+            scale(1);
+    }
+
+    25% {
+        transform:
+            scale(1.09);
+    }
+
+    38% {
+        transform:
+            scale(1);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+h1 {
+
+    /*
+       ปรับตามขนาดจออัตโนมัติ
+    */
+
+    font-size:
+        clamp(28px,
+            5vw,
+            52px);
+
+    line-height: 1.2;
+
+    letter-spacing:
+        clamp(1px,
+            0.3vw,
+            3px);
+
+    color: white;
+
+    text-shadow:
+        0 0 8px #ff1744,
+        0 0 20px #ff1744,
+        0 0 40px #ff1744;
+
+    margin-top:
+        clamp(0px,
+            1vw,
+            10px);
+
+}
+
+
+/* ==================================================
+   TYPING
+================================================== */
+
+.typing {
+
+    min-height:
+        clamp(20px,
+            3vw,
+            30px);
+
+    margin-top:
+        clamp(8px,
+            1.5vw,
+            15px);
+
+    color: #ccc;
+
+    font-size:
+        clamp(13px,
+            2vw,
+            17px);
+
+    line-height: 1.5;
+
+    max-width: 90vw;
+
+}
+
+
+/* ==================================================
+   COUNTER
+================================================== */
+
+.counter {
+
+    display: grid;
+
+    /*
+       คอม:
+       4 ช่องเรียงกัน
+
+       มือถือ:
+       2 x 2
+    */
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        clamp(6px,
+            1.5vw,
+            12px);
+
+    width:
+        min(100%,
+            500px);
+
+    margin-top:
+        clamp(15px,
+            2vw,
+            25px);
+
+}
+
+
+.time-box {
+
+    min-width: 0;
+
+    padding:
+        clamp(8px,
+            1.5vw,
+            14px) clamp(5px,
+            1vw,
+            10px);
+
+    border-radius:
+        clamp(9px,
+            1.5vw,
+            15px);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.05);
+
+    border:
+        1px solid rgba(255,
+            49,
+            85,
+            0.35);
+
+    box-shadow:
+        0 0 10px rgba(255,
+            49,
+            85,
+            0.08);
+
+}
+
+
+.time-box span {
+
+    display: block;
+
+    color: #ff3155;
+
+    font-size:
+        clamp(18px,
+            3vw,
+            28px);
+
+    font-weight: bold;
+
+}
+
+
+.time-box small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #888;
+
+    font-size:
+        clamp(9px,
+            1.5vw,
+            13px);
+
+}
+
+
+.counter-title {
+
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size:
+        clamp(11px,
+            1.5vw,
+            14px);
+
+}
+
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+button {
+
+    font-family: inherit;
+
+    border: none;
+
+    cursor: pointer;
+
+    /*
+       สำคัญกับมือถือ
+       ให้กดง่าย
+    */
+    touch-action: manipulation;
+
+}
+
+
+.main-button {
+
+    min-height: 44px;
+
+    padding:
+        10px clamp(20px,
+            4vw,
+            30px);
+
+    margin-top:
+        clamp(15px,
+            2vw,
+            22px);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(135deg,
+            #ff1744,
+            #ff4565);
+
+    color: white;
+
+    font-size:
+        clamp(14px,
+            2vw,
+            17px);
+
+    box-shadow:
+        0 0 15px rgba(255,
+            23,
+            68,
+            0.45);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+
+}
+
+
+.main-button:hover {
+
+    transform:
+        scale(1.07);
+
+    box-shadow:
+        0 0 30px rgba(255,
+            23,
+            68,
+            0.8);
+
+}
+
+
+/*
+   บนมือถือไม่มี hover จริง
+   เลยไม่ต้องให้เอฟเฟกต์ค้าง
+*/
+
+@media (hover: none) {
+
+    .main-button:hover {
+
+        transform: none;
+
+    }
+
+}
+
+
+/* ==================================================
+   SECRET BUTTON
+================================================== */
+
+.secret-button {
+
+    width:
+        clamp(42px,
+            6vw,
+            50px);
+
+    height:
+        clamp(42px,
+            6vw,
+            50px);
+
+    padding: 0;
+
+    margin-top: 12px;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border:
+        1px solid #ff3155;
+
+    color: #ff3155;
+
+    font-size:
+        clamp(17px,
+            3vw,
+            22px);
+
+    box-shadow: none;
+
+    transition: 0.3s;
+
+}
+
+
+.secret-button:hover {
+
+    background: #ff3155;
+
+    color: white;
+
+    box-shadow:
+        0 0 20px #ff3155;
+
+    transform:
+        scale(1.1);
+
+}
+
+
+.secret-hint {
+
+    margin-top: 6px;
+
+    color: #555;
+
+    font-size:
+        clamp(9px,
+            1.3vw,
+            12px);
+
+}
+
+
+/* ==================================================
+   BACK BUTTON
+================================================== */
+
+.back-button {
+
+    position: absolute;
+
+    top:
+        max(15px,
+            env(safe-area-inset-top));
+
+    left:
+        max(15px,
+            env(safe-area-inset-left));
+
+    width:
+        clamp(40px,
+            6vw,
+            48px);
+
+    height:
+        clamp(40px,
+            6vw,
+            48px);
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.05);
+
+    color: white;
+
+    font-size:
+        clamp(20px,
+            3vw,
+            27px);
+
+}
+
+
+/* ==================================================
+   LETTER
+================================================== */
+
+.letter-card {
+    width: min(92vw, 600px);
+
+    /*
+       ไม่ให้การ์ดล้นจอ
+    */
+    max-height: calc(100dvh - 40px);
+
+    /*
+       ไม่เอา scrollbar
+    */
+    overflow: hidden;
+
+    padding: clamp(20px, 5vw, 45px);
+
+    border-radius:
+        clamp(18px,
+            3vw,
+            28px);
+
+    background:
+        rgba(18, 18, 18, 0.96);
+
+    border:
+        1px solid rgba(255, 49, 85, 0.6);
+
+    box-shadow:
+        0 0 40px rgba(255, 23, 68, 0.25);
+
+    animation:
+        letterIn 0.5s ease;
+}
+
+
+@keyframes letterIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.85) translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1) translateY(0);
+
+    }
+
+}
+
+
+.envelope {
+
+    font-size:
+        clamp(45px,
+            8vw,
+            70px);
+
+    margin-bottom:
+        clamp(10px,
+            2vw,
+            20px);
+
+}
+
+
+.letter-card h2 {
+
+    margin-bottom:
+        clamp(15px,
+            3vw,
+            25px);
+
+    color: #ff5270;
+
+    font-size:
+        clamp(23px,
+            4vw,
+            32px);
+
+}
+
+
+.letter-card p {
+
+    margin-bottom:
+        clamp(12px,
+            2vw,
+            18px);
+
+    color: #ddd;
+
+    line-height: 1.9;
+
+    font-size:
+        clamp(13px,
+            2vw,
+            16px);
+
+}
+
+
+.love-text {
+
+    color:
+        #ff5270 !important;
+
+    font-size:
+        clamp(19px,
+            3vw,
+            24px) !important;
+
+    font-weight: bold;
+
+}
+
+
+.small-text {
+
+    color:
+        #888 !important;
+
+}
+
+
+/* ==================================================
+   SECRET PAGE
+================================================== */
+
+.big-heart {
+
+    font-size:
+        clamp(70px,
+            15vw,
+            130px);
+
+    filter:
+        drop-shadow(0 0 20px #ff1744);
+
+    animation:
+        secretHeartbeat 1s infinite;
+
+}
+
+
+@keyframes secretHeartbeat {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.2);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+.secret-content {
+
+    width:
+        min(90vw,
+            600px);
+
+}
+
+
+.secret-content h1 {
+
+    margin-top: 20px;
+
+}
+
+
+.secret-content p {
+
+    margin-top: 12px;
+
+    color: #aaa;
+
+    font-size:
+        clamp(13px,
+            2vw,
+            17px);
+
+}
+
+
+.secret-message {
+
+    color:
+        #ff5270 !important;
+
+    font-size:
+        clamp(16px,
+            2.5vw,
+            20px) !important;
+
+}
+
+
+/* ==================================================
+   TABLET / iPAD
+================================================== */
+
+/*
+   iPad แนวตั้ง / แนวนอน
+*/
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .heart-wrapper {
+
+        width: 350px;
+
+        height: 300px;
+
+    }
+
+
+    .counter {
+
+        width: 480px;
+
+    }
+
+
+    .letter-card {
+
+        max-width: 650px;
+
+    }
+
+}
+
+
+/* ==================================================
+   iPAD LANDSCAPE
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: landscape) {
+
+    .page {
+
+        justify-content: center;
+
+    }
+
+
+    .heart-wrapper {
+
+        width: 280px;
+
+        height: 230px;
+
+    }
+
+
+    .counter {
+
+        margin-top: 12px;
+
+    }
+
+
+    .main-button {
+
+        margin-top: 12px;
+
+    }
+
+}
+
+
+/* ==================================================
+   PHONE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .page {
+
+        /*
+           เผื่อ notch / home indicator
+        */
+
+        padding-top:
+            max(20px,
+                env(safe-area-inset-top));
+
+        padding-bottom:
+            max(20px,
+                env(safe-area-inset-bottom));
+
+    }
+
+
+    .heart-wrapper {
+
+        width:
+            min(82vw,
+                300px);
+
+        height:
+            min(70vw,
+                250px);
+
+    }
+
+
+    .counter {
+
+        /*
+           2 x 2
+        */
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        width:
+            min(90vw,
+                330px);
+
+    }
+
+
+    .time-box {
+
+        padding: 9px;
+
+    }
+
+
+    .letter-card {
+
+        width: 92vw;
+
+        max-height: 82dvh;
+
+    }
+
+}
+
+
+/* ==================================================
+   VERY SMALL PHONE
+================================================== */
+
+@media (max-width: 380px) {
+
+    .heart-wrapper {
+
+        width: 230px;
+
+        height: 200px;
+
+    }
+
+
+    h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .typing {
+
+        font-size: 12px;
+
+    }
+
+
+    .counter {
+
+        width: 260px;
+
+        gap: 6px;
+
+    }
+
+
+    .time-box {
+
+        padding: 7px;
+
+    }
+
+
+    .time-box span {
+
+        font-size: 18px;
+
+    }
+
+
+    .time-box small {
+
+        font-size: 9px;
+
+    }
+
+
+    .main-button {
+
+        padding:
+            9px 20px;
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* ==================================================
+   LANDSCAPE PHONE
+================================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .page {
+
+        justify-content:
+            flex-start;
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+
+        overflow: hidden;
+
+    }
+
+
+    .heart-wrapper {
+
+        width: 200px;
+
+        height: 170px;
+
+    }
+
+
+    h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .typing {
+
+        margin-top: 5px;
+
+    }
+
+
+    .counter {
+
+        margin-top: 8px;
+
+    }
+
+
+    .main-button {
+
+        margin-top: 8px;
+
+    }
+
+}
+
+
+/* ==================================================
+   REDUCE MOTION
+   สำหรับคนที่เปิด Reduce Motion
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+
+.letter-card p {
+    margin-bottom: clamp(8px, 2vw, 16px);
+
+    color: #ddd;
+
+    line-height: 1.7;
+
+    font-size:
+        clamp(12px,
+            1.8vw,
+            16px);
+}
+
+@media (max-width: 600px) {
+
+    .letter-card {
+        width: 90vw;
+
+        max-height: calc(100dvh - 30px);
+
+        padding: 22px 18px;
+    }
+
+    .letter-card h2 {
+        font-size: 24px;
+
+        margin-bottom: 12px;
+    }
+
+    .letter-card p {
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        margin-bottom: 9px;
+    }
+
+    .letter-card .main-button {
+        margin-top: 8px;
+    }
+
+}
