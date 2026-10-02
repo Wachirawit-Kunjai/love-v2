@@ -1472,95 +1472,63 @@ button {
 }
 
 
-/* ==================================================
-   IPAD LANDSCAPE
-================================================== */
+/* ================================
+   ลดขนาดหน้าแรก
+================================ */
 
-@media
-    (min-width: 601px)
-    and (max-width: 1100px)
-    and (orientation: landscape) {
+.page:first-of-type .heart-wrapper {
+    width: 220px;
+    height: 185px;
+}
 
-    .page {
+.page:first-of-type h1 {
+    font-size: 28px;
+}
 
-        padding:
-            10px
-            30px;
-    }
+.page:first-of-type .typing {
+    font-size: 13px;
+    margin-top: 5px;
+}
 
+.page:first-of-type .counter {
+    width: 360px;
+    gap: 7px;
+    margin-top: 10px;
+}
 
-    .heart-wrapper {
+.page:first-of-type .time-box {
+    padding: 7px 5px;
+}
 
-        width: 210px;
-        height: 175px;
-    }
+.page:first-of-type .time-box span {
+    font-size: 20px;
+}
 
+.page:first-of-type .time-box small {
+    font-size: 10px;
+}
 
-    h1 {
+.page:first-of-type .counter-title {
+    font-size: 11px;
+    margin-top: 5px;
+}
 
-        font-size: 28px;
-    }
+.page:first-of-type .main-button {
+    min-height: 40px;
+    margin-top: 8px;
+    padding: 8px 22px;
+    font-size: 14px;
+}
 
+.page:first-of-type .secret-button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    margin-top: 7px;
+}
 
-    .typing {
-
-        margin-top: 4px;
-    }
-
-
-    .counter {
-
-        margin-top: 8px;
-    }
-
-
-    .main-button {
-
-        margin-top: 7px;
-    }
-
-
-    .secret-button {
-
-        margin-top: 6px;
-    }
-
-
-    .secret-hint {
-
-        display: none;
-    }
-
-
-    /* หน้าจดหมาย */
-
-    #letter {
-
-        padding:
-            60px
-            25px
-            15px;
-    }
-
-
-    .letter-card {
-
-        max-height:
-            calc(100dvh - 75px);
-
-        padding:
-            20px
-            30px;
-    }
-
-
-    .letter-card p {
-
-        font-size: 13px;
-
-        line-height: 1.5;
-
-        margin-bottom: 7px;
-    }
-
+.page:first-of-type .secret-hint {
+    font-size: 9px;
+    margin-top: 3px;
 }
