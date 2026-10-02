@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 5 Months ❤️</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         Background
+    ========================== -->
+
+    <div class="stars"></div>
+
+    <div class="particles" id="particles"></div>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home" class="page">
+
+        <div class="heart-wrapper">
+
+            <canvas id="heartCanvas"></canvas>
+
+        </div>
+
+
+        <h1>
+            Happy 5 Months
+        </h1>
+
+
+        <p id="typing" class="typing"></p>
+
+
+        <!-- Counter -->
+
+        <div class="counter">
+
+            <div class="time-box">
+
+                <span id="days">
+                    0
+                </span>
+
+                <small>
+                    วัน
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="hours">
+                    0
+                </span>
+
+                <small>
+                    ชั่วโมง
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="minutes">
+                    0
+                </span>
+
+                <small>
+                    นาที
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="seconds">
+                    0
+                </span>
+
+                <small>
+                    วินาที
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <p class="counter-title">
+            เราอยู่ด้วยกันมาแล้ว ❤️
+        </p>
+
+
+        <!-- เปิดจดหมาย -->
+
+        <button id="letterBtn" class="main-button">
+            💌 เปิดจดหมาย
+        </button>
+
+
+        <!-- Secret Button -->
+
+        <button id="secretBtn" class="secret-button" aria-label="Secret">
+            ❤️
+        </button>
+
+
+        <p class="secret-hint">
+            กดหัวใจ 5 ครั้งเพื่อค้นหาความลับ
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         LETTER
+    ========================== -->
+
+    <section id="letter" class="page hidden">
+
+        <button class="back-button" onclick="showPage('home')">
+            ←
+        </button>
+
+
+        <div class="letter-card">
+
+            <div class="envelope">
+                💌
+            </div>
+
+
+            <h2>
+                ถึงไอเต่า 🐢❤️
+            </h2>
+
+
+            <p>
+                ขอบคุณที่อยู่ด้วยกัน
+                มาจนถึง 5 เดือนนะ
+                เค้าขอบคุณทุกๆอย่างเลยนะเธอทำให้ชีวิตเค้าสดใสขึ้นมากเลย
+            </p>
+
+            <p>
+                ตลอดเวลาที่ผ่านมา
+                เราอาจมีทั้งวันที่ดี
+                วันที่งอน วันที่งอแง
+                หรือบางวันที่ไม่เข้าใจกัน
+            </p>
+
+
+            <p>
+                แต่สุดท้ายแล้ว
+                เราก็ยังเลือกที่จะอยู่ข้างกัน
+                และสร้างความทรงจำดี ๆ
+                ไปด้วยกัน
+            </p>
+
+
+            <p>
+                ขอบคุณสำหรับทุกอย่างนะ
+                และขอให้หลังจากวันนี้
+                เรามีเดือนต่อ ๆ ไป
+                ให้ได้ฉลองด้วยกันอีก
+            </p>
+
+
+            <p class="love-text">
+                Happy 5 Months ❤️
+            </p>
+
+
+            <p class="small-text">
+                อยู่ด้วยกันไปนาน ๆ นะ
+            </p>
+
+
+            <button class="main-button" onclick="showPage('home')">
+                ❤️ กลับหน้าแรก
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SECRET
+    ========================== -->
+
+    <section id="secret" class="page hidden">
+
+        <div class="secret-content">
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+
+            <h1>
+                YOU FOUND IT!
+            </h1>
+
+
+            <p>
+                กดครบ 5 ครั้งละ
+            </p>
+
+
+            <p>
+                ความลับก็คือ ❤️
+            </p>
+
+
+            <p class="secret-message">
+                ความจริงเคารักบราวนี่มากกว่า🐕(หยอกเล่นนะะ)
+            </p>
+
+
+            <button class="main-button" onclick="showPage('home')">
+                ❤️ กลับหน้าแรก
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
