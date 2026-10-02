@@ -1430,55 +1430,14 @@ button {
 }
 
 
-/* ==================================================
-   IPAD PORTRAIT
-================================================== */
-
-@media
-    (min-width: 601px)
-    and (max-width: 1100px)
-    and (orientation: portrait) {
-
-    .heart-wrapper {
-
-        width: 250px;
-        height: 210px;
-    }
-
-
-    h1 {
-
-        font-size: 32px;
-    }
-
-
-    .counter {
-
-        width: 400px;
-    }
-
-
-    .letter-card {
-
-        width: 82vw;
-
-        max-width: 600px;
-
-        padding:
-            25px
-            30px;
-    }
-
-}
-
 
 /* ================================
    ลดขนาดหน้าแรก
 ================================ */
 
 .page:first-of-type .heart-wrapper {
-    width: 220px;
-    height: 185px;
+    width: 330px;
+    height: 200px;
 }
 
 .page:first-of-type h1 {
