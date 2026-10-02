@@ -1153,3 +1153,414 @@ button {
     }
 
 }
+/* ==================================================
+   IPAD FIX
+================================================== */
+
+@media
+    (min-width: 601px)
+    and (max-width: 1100px) {
+
+    .page {
+        width: 100vw;
+        height: 100dvh;
+        min-height: 0;
+
+        /*
+           ไม่ให้เนื้อหาดันออกนอกจอ
+        */
+        padding:
+            20px
+            30px;
+
+        overflow: hidden;
+
+        justify-content: center;
+    }
+
+
+    /* =========================
+       หัวใจหลัก
+    ========================= */
+
+    .heart-wrapper {
+
+        width: 270px;
+        height: 225px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       หัวข้อ
+    ========================= */
+
+    h1 {
+
+        font-size: 34px;
+
+        margin-top: 0;
+    }
+
+
+    .typing {
+
+        font-size: 15px;
+
+        margin-top: 6px;
+
+        min-height: 22px;
+    }
+
+
+    /* =========================
+       Counter
+    ========================= */
+
+    .counter {
+
+        width: 430px;
+
+        gap: 8px;
+
+        margin-top: 12px;
+    }
+
+
+    .time-box {
+
+        padding: 8px;
+
+    }
+
+
+    .time-box span {
+
+        font-size: 22px;
+    }
+
+
+    .time-box small {
+
+        font-size: 11px;
+    }
+
+
+    .counter-title {
+
+        margin-top: 6px;
+
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       ปุ่มเปิดจดหมาย
+    ========================= */
+
+    .main-button {
+
+        min-height: 42px;
+
+        margin-top: 10px;
+
+        padding:
+            9px
+            24px;
+
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       ❤️ ปุ่มลับ
+    ========================= */
+
+    .secret-button {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        width: 44px;
+        height: 44px;
+
+        min-width: 44px;
+        min-height: 44px;
+
+        margin-top: 9px;
+
+        flex-shrink: 0;
+
+        z-index: 50;
+    }
+
+
+    .secret-hint {
+
+        margin-top: 4px;
+
+        font-size: 10px;
+    }
+
+
+    /* ==================================================
+       หน้าจดหมาย
+    ================================================== */
+
+    #letter {
+
+        /*
+           ให้มีพื้นที่สำหรับปุ่ม ←
+        */
+
+        justify-content: center;
+
+        padding:
+            65px
+            30px
+            25px;
+    }
+
+
+    .letter-card {
+
+        width: min(
+            85vw,
+            620px
+        );
+
+        /*
+           ห้ามเกินพื้นที่ iPad
+        */
+
+        max-height:
+            calc(100dvh - 100px);
+
+        padding:
+            28px
+            35px;
+
+        overflow: hidden;
+
+        flex-shrink: 1;
+    }
+
+
+    .letter-card h2 {
+
+        font-size: 27px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .letter-card p {
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        margin-bottom: 9px;
+    }
+
+
+    .letter-card .main-button {
+
+        margin-top: 8px;
+    }
+
+
+    /* =========================
+       ปุ่มย้อนกลับ ←
+    ========================= */
+
+    .back-button {
+
+        position: fixed;
+
+        top: 20px;
+
+        left: 20px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+        min-height: 48px;
+
+        z-index: 9999;
+
+        background:
+            rgba(
+                30,
+                30,
+                30,
+                0.9
+            );
+
+        border:
+            1px solid
+            rgba(
+                255,
+                49,
+                85,
+                0.5
+            );
+
+        box-shadow:
+            0 0 15px
+            rgba(
+                255,
+                23,
+                68,
+                0.2
+            );
+    }
+
+}
+
+
+/* ==================================================
+   IPAD PORTRAIT
+================================================== */
+
+@media
+    (min-width: 601px)
+    and (max-width: 1100px)
+    and (orientation: portrait) {
+
+    .heart-wrapper {
+
+        width: 250px;
+        height: 210px;
+    }
+
+
+    h1 {
+
+        font-size: 32px;
+    }
+
+
+    .counter {
+
+        width: 400px;
+    }
+
+
+    .letter-card {
+
+        width: 82vw;
+
+        max-width: 600px;
+
+        padding:
+            25px
+            30px;
+    }
+
+}
+
+
+/* ==================================================
+   IPAD LANDSCAPE
+================================================== */
+
+@media
+    (min-width: 601px)
+    and (max-width: 1100px)
+    and (orientation: landscape) {
+
+    .page {
+
+        padding:
+            10px
+            30px;
+    }
+
+
+    .heart-wrapper {
+
+        width: 210px;
+        height: 175px;
+    }
+
+
+    h1 {
+
+        font-size: 28px;
+    }
+
+
+    .typing {
+
+        margin-top: 4px;
+    }
+
+
+    .counter {
+
+        margin-top: 8px;
+    }
+
+
+    .main-button {
+
+        margin-top: 7px;
+    }
+
+
+    .secret-button {
+
+        margin-top: 6px;
+    }
+
+
+    .secret-hint {
+
+        display: none;
+    }
+
+
+    /* หน้าจดหมาย */
+
+    #letter {
+
+        padding:
+            60px
+            25px
+            15px;
+    }
+
+
+    .letter-card {
+
+        max-height:
+            calc(100dvh - 75px);
+
+        padding:
+            20px
+            30px;
+    }
+
+
+    .letter-card p {
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+        margin-bottom: 7px;
+    }
+
+}
